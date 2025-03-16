@@ -33,12 +33,12 @@ function App() {
             {
               parts: [
                 {
-                  text: inputValue,
-                },
-              ],
-            },
-          ],
-        }),
+                  text: `${inputValue}`,
+                }
+              ]
+            }
+          ]
+        })
       }
     )
       .then((resp) => resp.json())
