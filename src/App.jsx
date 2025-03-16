@@ -59,20 +59,12 @@ function App() {
         <Bot className="w-14 h-14 mt-4"/>
         <div className="flex flex-col justify-between items-center p-7 w-full max-w-md">
           <div className="bg-[#A7C7E7] h-[600px] w-[600px] overflow-auto p-3 rounded-md shadow-lg flex flex-col">
-          { (
-            resp?.map((item, indx) => (
-              <span
-                key={indx}
-                className={`m-3 rounded-lg p-2 ${
-                  indx % 2 === 0
-                    ? "bg-white text-right"
-                    : "bg-cyan-800 text-left text-white"
-                }`}
-              >
-                {indx % 2 === 0 ? <span>{item}</span> : <Markdown>{item}</Markdown>}
-              </span>
-            ))
-          )}
+          {resp?.map((item, indx) => (
+          <span key={indx} className={`m-3 rounded-lg p-2 max-w-[80%] 
+            ${indx % 2 === 0 ? "bg-white self-end text-black" : "bg-cyan-800 self-start text-white"}`}>
+            {indx % 2 === 0 ? <span>{item}</span> : <Markdown>{item}</Markdown>}
+          </span>
+        ))}
           </div>
           <form className="w-full mt-3 flex gap-5" onSubmit={chat}>
             <input
