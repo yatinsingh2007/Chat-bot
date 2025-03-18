@@ -18,9 +18,8 @@ function App() {
     event.preventDefault();
 
     if (inputValue.trim() === "") {
-      setPresent(true);
-      setInputValue("");
-      return;
+      alert(`Enter something in The input Field.`);
+      return
     }
     setResp((prev) => [...prev, inputValue]);
     fetch(
@@ -80,11 +79,6 @@ function App() {
           </form>
         </div>
       </div>
-      {present && (
-        <div className="w-screen bg-white text-red-600 p-3">
-          ALERT:- Enter Something in The Input Field
-        </div>
-      )}
     </>
   );
 }
